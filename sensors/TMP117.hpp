@@ -7,6 +7,7 @@
 #pragma once
 
 #include <optional>
+#include <stdint.h>
 
 #include "i2c/i2c_device.hpp"
 
@@ -31,6 +32,13 @@ public:
         Device_ID      = 0x0F
     };
 
+    enum class Mode: uint8_t{
+        Continuous = 0b00,
+        Shutdown = 0b01,
+        Also_Continuous = 0b10,
+        One_shot = 0b11,
+    };
+
     /**
      * @brief Construct a new TMP117 object
      *
@@ -52,4 +60,15 @@ public:
      * @return uint16_t Device ID of chip, correct value for TMP117 is 0x117
      */
     std::optional<uint16_t> ID();
+
+    /**
+     * @brief Set mode of sensor
+     *
+     * @param mode  Mode of sensor
+     */
+    void Configure_mode(Mode mode);
+
+    std::optional<bool> Data_ready();
+
+
 };
