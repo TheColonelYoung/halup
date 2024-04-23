@@ -40,6 +40,8 @@ public:
 public:
     RTC_internal();
 
+    void Init();
+
     void Set_time(const Time& time);
 
     Time Get_time();

@@ -1,6 +1,9 @@
 #include "rtc.hpp"
 
 RTC_internal::RTC_internal() {
+}
+
+void RTC_internal::Init(){
     hrtc.Instance = RTC;
     hrtc.Init.HourFormat = RTC_HOURFORMAT_24;
     hrtc.Init.AsynchPrediv = 127;
