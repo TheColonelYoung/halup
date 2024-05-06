@@ -238,4 +238,11 @@ public:
      * @return std::string  Formatted string of register value
      */
     std::string Format_register(Registers_dynamic register_name);
+
+    /**
+     * @brief   Return size of memory in kb
+     *
+     * @return uint8_t  Size of memory in kb
+     */
+    uint8_t Memory_size() const{ return memory_size; };
 };
