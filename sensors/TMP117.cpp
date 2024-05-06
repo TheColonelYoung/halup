@@ -23,7 +23,7 @@ std::optional<uint16_t> TMP117::ID(){
 }
 
 void TMP117::Configure_mode(TMP117::Mode mode){
-    auto register_values = Read(static_cast<uint8_t>(Registers::Temp_Result),2);
+    auto register_values = Read(static_cast<uint8_t>(Registers::Configuration),2);
     if (register_values.has_value() == false) {
         return;
     }
