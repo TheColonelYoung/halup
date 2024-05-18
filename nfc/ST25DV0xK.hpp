@@ -198,16 +198,6 @@ public:
     bool Present_password(uint64_t password = default_password);
 
     /**
-     * @brief Write new password into device and lock system registers
-     *
-     * @param old_password  Old password to unlock system registers
-     * @param new_password  New password to write into device
-     * @return true     Password was changed successfully
-     * @return false    Password was not changed successfully, incorrect old password
-     */
-    bool Change_password(uint64_t old_password, uint64_t new_password);
-
-    /**
      * @brief       Control state of RF communication. On/Off
      *
      * @param state    New state of RF control

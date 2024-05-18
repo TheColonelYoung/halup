@@ -82,10 +82,6 @@ bool ST25DV0xK::Present_password(uint64_t password){
     return Transmit(password_present_command);
 }
 
-bool ST25DV0xK::Change_password(uint64_t old_password, uint64_t new_password){
-    return false;
-}
-
 bool ST25DV0xK::RF_control(ST25DV0xK::State state){
     uint8_t reg_value = 0x0;
     if (state == ST25DV0xK::State::On) {
