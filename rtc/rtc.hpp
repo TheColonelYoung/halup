@@ -8,6 +8,7 @@
 
 #include "stm32l4xx_hal.h"
 
+#include <cstdint>
 
 extern RTC_HandleTypeDef hrtc;
 
@@ -48,7 +49,7 @@ public:
 public:
     RTC_internal();
 
-    void Init();
+    void Init(uint8_t async_prediv = 127, uint16_t sync_prediv = 255);
 
     void Set_time(const Time& time);
 

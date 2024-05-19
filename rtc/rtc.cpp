@@ -3,11 +3,11 @@
 RTC_internal::RTC_internal() {
 }
 
-void RTC_internal::Init(){
+void RTC_internal::Init(uint8_t async_prediv, uint16_t sync_prediv){
     hrtc.Instance = RTC;
     hrtc.Init.HourFormat = RTC_HOURFORMAT_24;
-    hrtc.Init.AsynchPrediv = 127;
-    hrtc.Init.SynchPrediv = 255;
+    hrtc.Init.AsynchPrediv = async_prediv;
+    hrtc.Init.SynchPrediv = sync_prediv;
     hrtc.Init.OutPut = RTC_OUTPUT_DISABLE;
     hrtc.Init.OutPutRemap    = RTC_OUTPUT_REMAP_NONE;
     hrtc.Init.OutPutPolarity = RTC_OUTPUT_POLARITY_HIGH;
